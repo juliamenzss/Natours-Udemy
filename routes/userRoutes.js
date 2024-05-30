@@ -10,13 +10,15 @@ router.param('id', (req, res, next, val) => {
 })
 
 router
-.post('/singup', authController.singup)
-
-
-router
 .route('/')
 .get(userController.getAllUsers)
 .post(userController.createUser);
+
+
+router.post('/singup', authController.singup)
+
+
+router.post('/login', authController.login)
 
 router
 .route('/:id')
